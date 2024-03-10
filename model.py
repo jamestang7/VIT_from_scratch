@@ -32,7 +32,7 @@ class PatchEmbedding(nn.Module):
 
 class Vit(nn.Module):
     def __init__(self, in_channel, patch_size, embed_dim, num_patches, dropout, # patch parameters
-                 num_heads, activation, num_encoders, num_classes) # transformers parameters
+                 num_heads, activation, num_encoders, num_classes): # transformers parameter
         super(Vit, self).__init__()
         self.patch_embedding = PatchEmbedding(in_channel, patch_size, embed_dim, num_patches, dropout)
         encoder_layer = nn.TransformerEncoderLayer(d_model=embed_dim, nhead=num_heads, dropout=dropout,
