@@ -12,10 +12,10 @@ def get_loaders(train_df_dir, test_df_dir, batch_size):
     train_df, val_df = train_test_split(train_df, test_size=0.1, random_state=26)
 
     train_dataset = MINISTTrainDataset(images=train_df.iloc[:, 1:].values.astype(np.uint8),
-                                       labels=train_df.iloc[:, 0].values.astype(np.uint8),
+                                       labels=train_df.iloc[:, 0].values,
                                        indicies=train_df.index.values)
     val_dataset = MINISTValDataset(images=val_df.iloc[:, 1:].values.astype(np.uint8),
-                                       labels=val_df.iloc[:, 0].values.astype(np.uint8),
+                                       labels=val_df.iloc[:, 0].values,
                                        indicies=val_df.index.values)
     test_dataset = MINISTValDataset(images=test_df.iloc[:, 1:].values.astype(np.uint8),
                                        labels=test_df.iloc[:, 0].values.astype(np.uint8),
@@ -28,5 +28,7 @@ def get_loaders(train_df_dir, test_df_dir, batch_size):
                                   shuffle=True)
     test_dataloader = DataLoader(dataset=test_dataset, batch_size=batch_size,
                                   shuffle=False)
+    
+    return train_dataloader, val_dataloader, test_dataloader
     
     

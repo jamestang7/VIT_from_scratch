@@ -46,5 +46,5 @@ class Vit(nn.Module):
     def forward(self, x):
         x = self.patch_embedding(x)
         x = self.encoder_layers(x)
-        x = self.MLP(x.squeeze(1))
+        x = self.MLP(x[:, 0,:])
         return x 
