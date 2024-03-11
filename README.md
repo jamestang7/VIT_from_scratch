@@ -19,7 +19,11 @@ I made a tutorial describing the key operations and insights in ViT, and you can
 ![alt text](./tutorial/slide3.png)
 
 - Why do we need Positioning Embedding?
-    - Experiments of this [paper](https://arxiv.org/abs/2105.10497) shows better result in permutation
-    - There is no strong Prior Information assumption being made
+    - Experiments of this [paper](https://arxiv.org/abs/2105.10497) show better result in permutation
+    - Another crucial reason is that there is **no strong Prior Information** assumption being made
 
 ![slide5](./tutorial/slide5.png)
+
+# Dataset
+
+MNIST images from kaggle [site](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv?resource=download&select=mnist_test.csv)
